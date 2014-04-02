@@ -37,4 +37,4 @@ Plotting is also very simple
 ts.plot()
 ```
 
-
+![Image](https://raw.githubusercontent.com/mateuszk87/Fifa-14-Trading-Data-Gathering-and-Analysis/master/img/stats_example.png?raw=true)
