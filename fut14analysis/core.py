@@ -172,8 +172,7 @@ class TradeItemInfoAnalysisCollector(object):
         return list(self.get_series(TradeItemInfoAnalysisCollector.max_bin_filter))
 
     def get_series(self, fun):
-        for time_info in self.get_time_series():
-            time_info_sec = int((time_info - datetime.datetime.fromtimestamp(0)).total_seconds())
+        for time_info_sec in self.slots.keys():
             if time_info_sec in self.slots:
                 yield fun(self.slots[time_info_sec])
             else:
