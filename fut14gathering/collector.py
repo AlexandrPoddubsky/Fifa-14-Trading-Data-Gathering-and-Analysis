@@ -14,10 +14,10 @@ class TradeInfoEngine(object):
         self.search_engine = SofifaSearch
         self.logger = logging.getLogger("TradeInfoEngine")
         
-    def get_current_player_trades(self, player, max_pages=100, page_size=5):
+    def get_current_player_trades(self, player, max_pages=100, page_size=5, start_with_page=0):
         results = []
         cur_time = time.time()
-        for i in range(0, max_pages):
+        for i in range(start_with_page, max_pages):
             try:
                 result_page = self.fut.searchAuctions('player', assetId=player.assetId, start=i*page_size, page_size=page_size)
                 self.logger.debug("search for player %s got %i results" % (player.assetId, len(result_page)))
