@@ -20,7 +20,7 @@ class TradeInfoEngine(object):
         for i in range(start_with_page, max_pages):
             try:
                 result_page = self.fut.searchAuctions('player', assetId=player.assetId, start=i*page_size, page_size=page_size)
-                self.logger.debug("search for player %s got %i results" % (player.assetId, len(result_page)))
+                self.logger.debug("search for player %s on page %i got %i results" % (player.assetId, i, len(result_page)))
                 if result_page:
                     results.append([TradeItemInfo(result, cur_time) for result in result_page])
                 else:
